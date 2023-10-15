@@ -2,15 +2,25 @@
 
 namespace frontend\controllers;
 
+use frontend\models\Malumot;
 use frontend\models\MyContact;
 use yii\web\Controller;
 
 class PostController extends Controller
 {
-  //  public $defaultAction = 'index';
+ public $defaultAction = 'salom';
   public function actionSalom()
    {
-    return $this->render('salom');
+      $malumot = new Malumot();
+    if (\YII::$app->request->isPost){
+       $formdata = (\Yii::$app->request->post());
+       $malumot->malumot_1 = $formdata['malumot_1'];
+        $malumot->malumot_2 = $formdata['malumot_2'];
+       if ($malumot->validate()){
+           \Yii::$app->session->setFlash('danger','validatsiyadan otdi');
+       }
+    }
+    return $this->render('salom',['malumot' => $malumot]);
    }
     public function actionIndex()
     {
