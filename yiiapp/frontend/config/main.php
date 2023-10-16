@@ -11,7 +11,7 @@ return [
     'language' => 'uz',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'defaultRoute'=>'post',
+
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
