@@ -11,7 +11,7 @@ class Validator extends Model
     public function rules()
     {
         return[
-        [['malumot_1','malumot_2'],'required'],
+        [['malumot_1','malumot_2'],'required' ],
       ];
 
     }

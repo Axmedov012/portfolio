@@ -15,7 +15,7 @@ class ValidatorController extends Controller
             $model->malumot_1 = $data['malumot_1'];
             $model->malumot_2 = $data['malumot_2'];
             if ($model->validate()) {
-                \Yii::$app->session->setFlash('success', 'Validatsiyadan otdi');
+                \Yii::$app->session->setFlash('danger', 'Validatsiyadan otdi');
             }
         }
         return $this->render('index', ['model' => $model]);

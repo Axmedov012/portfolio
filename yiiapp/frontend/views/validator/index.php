@@ -1,7 +1,7 @@
 
 <?php
 
-if ($model->hasErrors()){
+if ($model -> hasErrors()){
     echo '<pre>';
     print_r($model->getErrors());
     echo '<pre>';
