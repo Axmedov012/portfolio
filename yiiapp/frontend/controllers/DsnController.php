@@ -14,7 +14,7 @@ class DsnController extends Controller
             ->batchInsert('person',['name','email','gender'],
                 [
                     ['nodir','nodir012@gmail.com' , 'erkak'],
-                    ['temur','temur012@gmail.com' , 'erkak'],
+                    ['temur', 'temur012@gmail.com' , 'erkak'],
                     ['nilufar', 'nilufar012@gmail.com' , 'ayol'],
                ])
             ->execute();
