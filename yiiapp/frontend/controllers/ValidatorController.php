@@ -11,9 +11,8 @@ class ValidatorController extends Controller
     {
         $model = new Validator();
         if (\Yii::$app->request->isPost) {
-            $data = \Yii::$app->request->post();
-            $model->malumot_1 = $data['malumot_1'];
-            $model->malumot_2 = $data['malumot_2'];
+          $model->load(\Yii::$app->request->post());
+
             if ($model->validate()) {
                 \Yii::$app->session->setFlash('danger', 'Validatsiyadan otdi');
             }
@@ -21,3 +20,4 @@ class ValidatorController extends Controller
         return $this->render('index', ['model' => $model]);
     }
 }
+
