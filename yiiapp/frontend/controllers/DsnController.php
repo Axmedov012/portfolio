@@ -15,7 +15,7 @@ class DsnController extends Controller
                 [
                     ['nodir','nodir012@gmail.com' , 'erkak'],
                     ['temur','temur012@gmail.com' , 'erkak'],
-                    ['nilufar','nilufar012@gmail.com','ayol'],
+                    ['nilufar','nilufar012@gmail.com' , 'ayol'],
                ])
             ->execute();
 
