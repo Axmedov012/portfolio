@@ -22,6 +22,7 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ * @property string $role  // user va Admin   Roli
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -29,6 +30,8 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_INACTIVE = 9;
     const STATUS_ACTIVE = 10;
 
+    const ROLE_ADMIN = 'admin'; // admin foydalanuvchi
+    const ROLE_CLIENT = 'client';  //User foydalanuvchi
 
     /**
      * {@inheritdoc}
@@ -209,5 +212,26 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    //  User foydalanuvchi
+    /* User ning roli Client yoki Client emasligini tekshiradi      */
+    public function isClient()
+    {
+        if ($this->role === self::ROLE_CLIENT || $this->role === self::ROLE_ADMIN){
+            return true;
+        }
+        return false;
+    }
+
+    // Admin foydalanuvchi
+    /* User ning roli Admin yoki Admin emasligini tekshiradi */
+
+    public function isAdmin()
+    {
+        if ($this->role === self::ROLE_ADMIN){
+            return true;
+        }
+        return false;
     }
 }

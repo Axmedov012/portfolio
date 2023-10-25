@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-8">
             <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
                 <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
@@ -40,6 +40,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?php ActiveForm::end(); ?>
         </div>
+
+        <div class="col-lg-4" style="border:blue 1px solid">
+            <?php  echo \frontend\widgets\topproducts\TopProduct::widget(['firstName'=>"Eshmat"]);  ?>
+        </div>
+
     </div>
 
 </div>

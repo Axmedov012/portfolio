@@ -13,7 +13,7 @@ class DsnController extends Controller
         $command = \Yii::$app->db->createCommand()
             ->batchInsert('person',['name','email','gender'],
                 [
-                    ['nodir','nodir012@gmail.com' , 'erkak'],
+                    ['nodir' , 'nodir012@gmail.com' , 'erkak'],
                     ['temur' , 'temur012@gmail.com' , 'erkak'],
                     ['nilufar', 'nilufar012@gmail.com' , 'ayol'],
                ])

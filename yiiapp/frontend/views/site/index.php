@@ -1,9 +1,31 @@
+<br>
+<br>
+<br>
+
+<?php
+//widgetlar
+
+echo \frontend\widgets\topproducts\TopProduct::widget([
+        'firstName'=>"Doniyor"
+]);
+
+?>
+
 <?php
 
 /** @var yii\web\View $this */
 
 $this->title = 'My Yii Application';
+
+if (!Yii::$app->user->isGuest){
+    echo "<h1>xush kelibsiz</h1>";
+}else{
+    echo "<h1>Login qiling</h1>";
+}
 ?>
+
+
+
 <div class="site-index">
     <div class="p-5 mb-4 bg-transparent rounded-3">
         <div class="container-fluid py-5 text-center">
